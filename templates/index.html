@@ -1,0 +1,712 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="{%static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/line-awesome/css/line-awesome.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{%static 'vendor/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{%static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Selecao - v2.3.1
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center">
+
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="{%url 'index_page' %}">NewsCast</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!--  <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="{%url 'index_page' %}">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#newspapers">Newspapers</a></li>
+          <li><a href="#categories">Categories</a></li>
+          {% if user.is_authenticated %}
+          <li class="drop-down"><a href="">{{user.email}}</a>
+            <ul>
+              <li><a href="logout">Logout</a></li>
+              <!-- <li class="drop-down"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="#preferences">Select Preferences</a></li>
+              <li><a href="#Mypreferences">My preferences</a></li>
+            </ul>
+          </li>
+          {% else %}
+          <li><a href="login">Login</a></li>
+          <li><a href="signup">SignUp</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" class="container carousel carousel-fade" data-ride="carousel">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>NewsCast</span></h2>
+          <p class="animate__animated fanimate__adeInUp">Get your Desired News</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <!-- <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div> -->
+
+      <!-- Slide 3 -->
+      <!-- <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+        </div>
+      </div> -->
+
+      <!-- <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a> -->
+
+    </div>
+
+    <!-- <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg> -->
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>Who we are</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div>
+            <p>
+              NewsCast is a non profitable website where our users get daily news based on their preferences.  
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>We have multiple NewsPapers</li>
+              <li><i class="ri-check-double-line"></i>You have many Categories to choose</li>
+              <li><i class="ri-check-double-line"></i>Getting your desired news is our wish</li>
+            </ul>
+          </div>
+          <!-- <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div> -->
+        </div>
+        <br>
+        <div class="section-title" data-aos="zoom-out">
+          <p>How to Use ?</p>
+        </div>
+        <div class="row content" data-aos="fade-up">
+          <div>
+            <p>
+              Our website is user friendly and easy to use.Please follow the steps if you get confused.  
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>To become a user,one must sign-up on our website.</li>
+              <li><i class="ri-check-double-line"></i>After successful login,you can find your mail-id at top right corner which contains a drop down</li>
+              <li><i class="ri-check-double-line"></i>Choose select preferences to select/change your preferences.</li>
+              <li><i class="ri-check-double-line"></i>Select your desired newspaper for the given categories and select your mode of message.</li>
+              <li><i class="ri-check-double-line"></i>Choose my preferences to check your preferences.</li>
+              <li><i class="ri-check-double-line"></i>That's it, you will receive a mail/sms from us which contains headlines of your preffered choices.</li>
+              <li><i class="ri-check-double-line"></i>You can click on the headline in the message to read the full article about that particular headline.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= newspapers======= -->
+    <section id="newspapers" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>NewsPapers</h2>
+          <p>Available Newspapers</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up">
+              <div class="member-img">
+                <img src="{%static 'img/news/hindus.png' %}" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>The Hindu</h4>
+                <span>since 1978</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{%static 'img/news/economic times.png' %}" class="img-fluid" alt="">            
+              </div>
+              <div class="member-info">
+                <h4>The Economic Times</h4>
+                <span>since 1961</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{%static 'img/news/deccan.png' %}" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Deccan Chronicle</h4>
+                <span>since 1938</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="{%static 'img/news/times.png' %}" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>The Times of India</h4>
+                <span>since 1838</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End newspapers Section -->
+
+    <!-- ======= categories Section ======= -->
+    <section id="categories" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>categories</h2>
+          <p>What we do offer</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box" data-aos="zoom-in-left">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">Business</a></h4>
+              <p class="description">Stock Market,Trading,International and National Marketing news...etc.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">Sports</a></h4>
+              <p class="description">Cricket,Football,Badmintion,Tennis..etc.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">Education</a></h4>
+              <p class="description">Job offers,inventions,Emerging Technologies,Study guides..etc.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">Politics</a></h4>
+              <p class="description">central and state government related news,Foreign countries politics..etc.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mt-5">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">Films</a></h4>
+              <p class="description">Hollywood,Bollywood,Tollywood..etc and other film related news.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5">
+            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
+              <div class="icon"></div>
+              <h4 class="title"><a href="">and More</a></h4>
+              <p class="description">You can also Expect more than we mentioned!</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End categories Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Portfolio</h2>
+          <p>What we've done</p>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="{%static 'img/portfolio/portfolio-1.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-2.jpg'%}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="{%static 'img/portfolio/portfolio-2.jpg'%}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="{%static 'img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="{%static 'img/portfolio/portfolio-4.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="{%static 'img/portfolio/portfolio-5.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="{%static 'img/portfolio/portfolio-6.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="{%static 'img/portfolio/portfolio-7.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="{%static 'img/portfolio/portfolio-8.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="{%static 'img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="{%static 'img/portfolio/portfolio-9.jpg' %}" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!--prefernces section-->
+    {% if user.is_authenticated %}
+    <section id="preferences" >
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Preferences</h2>
+          <p>SElECT NEWSPAPERS</p>
+        </div>
+        <form method="POST" action="">
+          {% csrf_token %}
+
+          <div class="row mt-2">
+
+            <div class="col-md-4">
+              <h4 class="title">Select message Type</h4>
+            </div>
+
+            <div class="col-md-4 offset-md-0">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="msg_type">
+                  <option value="none" selected>Choose...</option>
+                  <option value="mail" >Email</option>
+                  <option value="sms">Sms</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="row mt-4">
+
+            <div class="col-md-4">
+              <h4 class="title">Technology</h4>
+            </div>
+
+            <div class="col-md-4 offset-md-0">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="technology">
+                  <option value="none" selected>Choose...</option>
+                  <option value="Hindu">The Hindu</option>
+                  <option value="Economic">The Economic Times</option>
+                  <option value="Deccan">Deccan Chronicle</option>
+                  <option value="Times">The Times of India</option>
+                  <option value="remove">Remove category</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row mt-4">
+
+            <div class="col-md-4">
+              <h4 class="title">Sports</h4>
+            </div>
+
+            <div class="col-md-4 offset-md-0">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="sports">
+                  <option value="none" selected>Choose...</option>
+                  <option value="Hindu">The Hindu</option>
+                  <option value="Economic">The Economic Times</option>
+                  <option value="Deccan">Deccan Chronicle</option>
+                  <option value="Times">The Times of India</option>
+                  <option value="remove">Remove category</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="row mt-4">
+
+            <div class="col-md-4">
+              <h4 class="title">Business</h4>
+            </div>
+
+            <div class="col-md-4 offset-md-0">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="business">
+                  <option value="none" selected>Choose...</option>
+                  <option value="Hindu">The Hindu</option>
+                  <option value="Economic">The Economic Times</option>
+                  <option value="Deccan">Deccan Chronicle</option>
+                  <option value="Times">The Times of India</option>
+                  <option value="remove">Remove category</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="row mt-4">
+
+            <div class="col-md-4">
+              <h4 class="title">Entertainment</h4>
+            </div>
+
+            <div class="col-md-4 offset-md-0">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" name="entertainment">
+                  <option value="none" selected>Choose...</option>
+                  <option value="Hindu">The Hindu</option>
+                  <option value="Economic">The Economic Times</option>
+                  <option value="Deccan">Deccan Chronicle</option>
+                  <option value="Times">The Times of India</option>
+                  <option value="remove">Remove category</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="text-center" style="margin-top:50px;"><button id="done" onmouseover="mouseover()" onmouseout="mouseout()" type="submit" style="padding:5px 10px 5px 10px;border-radius:30px;">Done !</button></div>
+        </form>
+        <!--My preferences-->
+        <div id="Mypreferences">
+
+          <div class="section-title" data-aos="zoom-out" style="margin-top: 100px;">
+            <p>Your Preferences</p>
+          </div>
+          <div class="row mt-4">
+  
+            <div class="col-md-4">
+              <h4 class="title">Message Type</h4>
+            </div>
+  
+            <div class="col-md-4 offset-md-0">
+              <h5>{{details.msg_type}}</h5>
+            </div>
+  
+          </div>
+          <div class="row mt-4">
+  
+            <div class="col-md-4">
+              <h4 class="title">Technology</h4>
+            </div>
+  
+            <div class="col-md-4 offset-md-0">
+              <h5>{{details.technology}}</h5>
+            </div>
+  
+          </div>
+          <div class="row mt-4">
+  
+            <div class="col-md-4">
+              <h4 class="title">Sports</h4>
+            </div>
+  
+            <div class="col-md-4 offset-md-0">
+              <h5>{{details.sports}}</h5>
+            </div>
+  
+          </div>
+          <div class="row mt-4">
+  
+            <div class="col-md-4">
+              <h4 class="title">Business</h4>
+            </div>
+  
+            <div class="col-md-4 offset-md-0">
+              <h5>{{details.business}}</h5>
+            </div>
+  
+          </div>
+          <div class="row mt-4">
+  
+            <div class="col-md-4">
+              <h4 class="title">Entertainment</h4>
+            </div>
+  
+            <div class="col-md-4 offset-md-0">
+              <h5>{{details.entertainment}}</h5>
+            </div>
+  
+          </div>
+          
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    <!-- <script>
+      function mouseover() {
+          document.getElementById("done").style.backgroundColor = "red";
+      }
+      function mouseout() {
+        document.getElementById("done").style.backgroundColor = "green";
+    }
+   </script> -->
+
+    <!-- ======= Contact Section ======= -->
+    <!-- <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Contact</h2>
+          <p>LOGIN</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4" data-aos="fade-right">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>info@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Mobile no:</h4>
+                <p>5589 55488 55s</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>NewsCast</h3>
+      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>NewsCast</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{%static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{%static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{%static 'vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{%static 'vendor/php-email-form/validate.js' %}"></script>
+  <script src="{%static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{%static 'vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{%static 'vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{%static 'vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{%static 'js/main.js' %}"></script>
+
+  <!--css js-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
